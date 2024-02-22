@@ -1,11 +1,11 @@
 # mi_proyecto
 
-Descripciín basisca de su Proyecto de POO ...
+aprendizage de java de estudiante de universidad del quindio
 
 # Autores
 
-- Autor 1
-- Autor 2
+- Autor 1: Carlos Alonso Barahona Alvarez
+  
 
 # Herramientas
 
