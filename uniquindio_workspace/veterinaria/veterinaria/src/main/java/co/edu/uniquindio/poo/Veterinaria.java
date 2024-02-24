@@ -17,5 +17,3 @@ public record Veterinaria(int edad, double peso, String color, String nombre, St
 
 }
 
-/*  género,.
- */
