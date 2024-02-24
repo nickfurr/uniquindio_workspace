@@ -27,9 +27,14 @@ public class VeterinariaTest {
         LOG.info("Iniciado test shouldAnswerWithTrue");
         
 
-        Veterinaria perro = new Veterinaria(8, 15.5, "blanco", "pepe", "husky", "ciberiano", "masculino");
+        Veterinaria perro = new Veterinaria(8, 15.5, "blanco", "pepe", "perro", "ciberiano", "masculino");
 
-        assertEquals("husky", perro.especie());
+        /*
+         * 
+         * a continuacion es si son los datos correctos
+         */
+
+        assertEquals("perro", perro.especie());
 
         assertEquals("blanco", perro.color());
 
@@ -42,7 +47,9 @@ public class VeterinariaTest {
         assertEquals(15.5, perro.peso());
 
         assertEquals("masculino", perro.genero());
-        
+
+      
+        Veterinaria gato = new Veterinaria(-5, 5.3, "naranja", "pepe", "gato","mainecon" ,"masculino");
         
 
         
