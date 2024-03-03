@@ -1,19 +1,105 @@
 package co.edu.uniquindio.poo;
 
-public record Veterinaria(int edad, double peso, String color, String nombre, String especie, String raza, String genero) {
+import java.util.Collection;
+import java.util.LinkedList;
 
-    public Veterinaria{
 
-        assert nombre != null;
-        assert color != null;
-        assert especie != null;
-        assert raza != null;
-        assert genero != null;
-        assert edad > 0;
-        assert peso > 0;
+public class Veterinaria {
+
+    private final String nombre;
+    private final Collection<Mascota> mascotas;
     
+    
+
+    public Veterinaria(String nombre){
+
+        assert nombre != null && nombre != "":"no se permiten nombres nulos";
+        this.nombre = nombre;
+        this.mascotas = new LinkedList<Mascota>();
+        
+
     }
 
 
-}
+    /*
+     * Este metodo verifica si hay id repetido a la hora de igresar elementos a la coleccion
+     * de mascotas, si esta vacia la lista agrega y si hay dos iguales lanza excepcion.
+     */
+    public void setMascotas (Mascota inMascota){
+        
+        if (this.mascotas.isEmpty()){
 
+            mascotas.add(inMascota);
+
+        }
+
+        boolean agregar = true;
+  
+        for(Mascota a : this.mascotas){
+     
+            if (a.ID() == inMascota.ID()){
+
+                agregar = false;
+      
+            }
+            
+        }
+
+        if (agregar){
+
+            this.mascotas.add(inMascota);
+            
+        }
+
+
+       
+
+        
+   
+    }
+
+    public Collection<Mascota> getMascota (){
+
+        return this.mascotas;
+    }
+
+    /*
+     * este metodo crea una sublista iterando y comparando la edad de las instancias
+     * dentro de la coleccion, y guardando en la sublista las instancias con edad mayor a diez
+     */
+    public Collection<Mascota> buscarMayoresDiez (){
+
+        Collection <Mascota> mayoresDiez = new LinkedList<>();
+
+        for (Mascota mascota : this.mascotas ){
+
+            if (mascota.edad() > 10){
+
+                mayoresDiez.add(mascota);
+
+            }
+
+        }
+
+        return mayoresDiez;
+    }
+
+    private boolean compararExistencia (Mascota mascotaIn){
+
+            boolean resultado = false;
+
+        for (Mascota mascota : this.mascotas) {
+
+            if (mascota.nombre().equals(mascotaIn.nombre())){
+                
+                resultado = true;
+
+            }
+            
+
+        }
+
+        return resultado;
+    }
+ 
+}

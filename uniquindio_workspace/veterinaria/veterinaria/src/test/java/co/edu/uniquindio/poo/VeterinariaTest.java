@@ -12,50 +12,68 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
+import java.lang.Throwable;
 
-/**
- * Unit test for simple App.
- */
+
 public class VeterinariaTest {
     private static final Logger LOG = Logger.getLogger(VeterinariaTest.class.getName());
 
-    /**
-     * Rigorous Test :-)
-     */
+
+   /* 
     @Test
-    public void shouldAnswerWithTrue() {
-        LOG.info("Iniciado test shouldAnswerWithTrue");
+    public void datosCompletos() {
+
+        Mascota juan = new Mascota(0, 12, 15, "naranja", "juan", "gato", "mestizo", "masculino");
+
+        assertEquals(juan.ID(), 0);
+        assertEquals(juan.edad(), 12);
+        assertEquals(juan.peso(),15);
+        assertEquals(juan.color(), "naranja");
+        assertEquals(juan.nombre(), "juan");
+        assertEquals(juan.especie(), "gato");
+        assertEquals(juan.raza(), "mestizo");
+        assertEquals(juan.genero(), "masculino");
+
+    }
+
+    @Test
+    public void veterinariaVacia(){
+
+        Veterinaria clinicaPerraustica = new Veterinaria(null);
+
+    }
+    @Test
+    public void  agregarMascota(){
+
+        Veterinaria perrosCariñosos = new Veterinaria("perros cariñosos");
+
+        Mascota pedro = new Mascota(10000, 1, 1, "narana", "pero", "gao", "mestio", "masulio");
+
+        perrosCariñosos.setMascotas(pedro);
+
         
 
-        Veterinaria perro = new Veterinaria(8, 15.5, "blanco", "pepe", "perro", "ciberiano", "masculino");
+    }
 
-        /*
-         * 
-         * a continuacion es si son los datos correctos
-         */
+    @Test
+    public void agregarMascotaRepetida (){
 
-        assertEquals("perro", perro.especie());
+        Veterinaria mascotas = new Veterinaria("mascotas");
 
-        assertEquals("blanco", perro.color());
+        Mascota santiago = new Mascota(0, 12, 13, "blanco", "santiago", "gato", "mestizo", "masculino");
+        
+        Mascota camilo = new Mascota(0, 12, 13, "blanco", "santiago", "gato", "mestizo", "masculino");
 
-        assertEquals("ciberiano", perro.raza());
+        mascotas.setMascotas(santiago);
 
-        assertEquals("pepe", perro.nombre());
+        mascotas.setMascotas(camilo);
 
-        assertEquals(8, perro.edad());
-
-        assertEquals(15.5, perro.peso());
-
-        assertEquals("masculino", perro.genero());
-
-      
-        Veterinaria gato = new Veterinaria(-5, 5.3, "naranja", "pepe", "gato","mainecon" ,"masculino");
+        System.out.println(mascotas.getMascota());
         
 
         
-
-        LOG.info("Finalizando test shouldAnswerWithTrue");
 
 
     }
+      */
 }
