@@ -19,7 +19,7 @@ public class VeterinariaTest {
     private static final Logger LOG = Logger.getLogger(VeterinariaTest.class.getName());
 
 
-   /* 
+   
     @Test
     public void datosCompletos() {
 
@@ -75,5 +75,5 @@ public class VeterinariaTest {
 
 
     }
-      */
+      
 }

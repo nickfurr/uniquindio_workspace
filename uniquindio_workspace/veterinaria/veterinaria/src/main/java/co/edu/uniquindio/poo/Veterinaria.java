@@ -25,6 +25,8 @@ public class Veterinaria {
      * Este metodo verifica si hay id repetido a la hora de igresar elementos a la coleccion
      * de mascotas, si esta vacia la lista agrega y si hay dos iguales lanza excepcion.
      */
+
+     /* 
     public void setMascotas (Mascota inMascota){
         
         if (this.mascotas.isEmpty()){
@@ -53,9 +55,29 @@ public class Veterinaria {
 
 
        
-
+        
         
    
+    }
+ */
+
+    public void setMascotas (Mascota inMascota){
+        
+        if (this.mascotas.isEmpty()){
+
+            mascotas.add(inMascota);
+
+        }else{
+
+            for (Mascota mascota : mascotas) {
+                if (mascota.ID() == inMascota.ID()){
+    
+                    assert false :"el elemento esta repetido" ;
+                }
+            }
+        }
+
+        
     }
 
     public Collection<Mascota> getMascota (){
